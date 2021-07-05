@@ -3,5 +3,41 @@
     margin: 0 auto;
     width: 75%;
     text-align: center;
+}
 
+.blackjack-row-1, .blackjack-row-2, .blackjack-row-3{
+    display: flex;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.blackjack-row-1, .blackjack-row-2{
+    background: url('https://media.istockphoto.com/photos/green-felt-texture-for-poker-and-casino-background-picture-id1133423137?k=6&m=1133423137&s=170667a&w=0&h=-skbdWP8xawvxx45xvwDHi-zdCZcSyJ6jAfZdGeu4Xo=');
+    color: white;
+
+}
+
+.blackjack-row-1 div{
+    padding: 10px;
+    height: 350px;
+    flex: 1;
+    text-align: center;
+}
+
+.blackjack-row-1 img{
+    width: 25%;
+    padding: 10px;
+}
+
+
+.blackjack-row-2 div{
+    padding: 10px;
+}
+
+table, th,td{
+    padding: 10px;
+    border: solid black;
 }
