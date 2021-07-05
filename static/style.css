@@ -22,7 +22,7 @@
 
 .blackjack-row-1 div{
     padding: 10px;
-    height: 350px;
+    min-height: 350px;
     flex: 1;
     text-align: center;
 }
