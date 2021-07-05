@@ -12,18 +12,18 @@ const hitSound = new Audio('sounds/swish.m4a');
 
 document.querySelector('#hit-button').addEventListener('click', blackjackHit);
 document.querySelector('#deal-button').addEventListener('click', blackjackDeal);
-
+document.querySelector('#stand-button').addEventListener('click', dealerLogic);
 
 
 function blackjackHit(){
     let card = randomCard();
-    showCard(YOU,card);
+    showCard(card,YOU);
     updateScore(card,YOU);
     showScore(YOU);
     
 }
 
-function showCard(activePlayer, card){
+function showCard(card,activePlayer){
     if(activePlayer['score'] <= 21)
     {
         let cardImage = document.createElement('img');
@@ -83,4 +83,36 @@ function showScore(activePlayer){
     }else{
     document.querySelector(activePlayer['scoreSpan']).textContent = activePlayer['score'];
 }
+}
+
+function dealerLogic()
+{
+    
+       let card = randomCard();
+        showCard(card,DEALER);
+        updateScore(card,DEALER);
+        showScore(DEALER);
+}
+
+// Compute scores and return winner
+
+function computeWinner(){
+    let winner;
+
+    if(YOU['score'] <= 21){
+        if(YOU['score'] > DEALER['score'] || (DEALER['score'] > 21)){
+            winner = YOU;
+        }else if(YOU['score'] < DEALER['score'])
+        {
+            winner = DEALER;
+        }else if(YOU['score'] === DEALER['score'])
+        {
+            // draw
+        }
+    // You bust and dealer didnt
+    }else if(YOU['score'] > 21 && DEALER['score'] <= 21){
+        winner = DEALER;
+    }else if(YOU['score'] > 21 && DEALER['score'] > 21){
+        // draw
+    }
 }
